@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "",
     "main": "app.js",
-    "engines": "5.2.0",
+    "engines": "5.4.0",
     "bin" : {
         "MCG": "./bin/cli.js"
     },
