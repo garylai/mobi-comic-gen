@@ -12,12 +12,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "co": "^4.6.0",
     "command-line-args": "^2.1.4",
     "jquery": "^2.2.0",
     "js-beautify": "^1.5.10",
-    "jsdom": "^7.2.2",
-    "merge": "^1.2.0",
-    "request": "^2.67.0",
     "winston": "^2.1.1"
   }
 }
