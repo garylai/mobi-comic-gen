@@ -15,6 +15,7 @@
     "co": "^4.6.0",
     "command-line-args": "^2.1.4",
     "js-beautify": "^1.5.10",
+    "lwip": "0.0.8",
     "node-uuid": "^1.4.7",
     "request": "^2.67.0",
     "winston": "^2.1.1"
