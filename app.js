@@ -20,8 +20,7 @@ const MCGOPFBuilder = require('./lib/mcg_opf_builder.js');
 //         console.log(err.stack);
 //     });
 
-const MCGComic = require('./model/mcg_comic.js');
-const mcgComic = new MCGComic('灌篮高手全国大赛篇(全彩)64话',
+const opfBuilder = new MCGOPFBuilder('灌篮高手全国大赛篇(全彩)64话',
                               [ '/var/folders/zv/08pz_mfn0196h6r4k6n7rt65zc12vx/T/d8639d5b-3aa7-45e4-bf28-360c173fe55b.jpg',
                                 '/var/folders/zv/08pz_mfn0196h6r4k6n7rt65zc12vx/T/2abd1061-cdad-4694-8914-ed48d2a7f1a7.jpg',
                                 '/var/folders/zv/08pz_mfn0196h6r4k6n7rt65zc12vx/T/c28c54a8-1dd9-4ffd-a04f-c300a4b14581.jpg',
@@ -35,7 +34,7 @@ const mcgComic = new MCGComic('灌篮高手全国大赛篇(全彩)64话',
                                 '/var/folders/zv/08pz_mfn0196h6r4k6n7rt65zc12vx/T/a7cc3da3-e8ab-465e-b6a9-dc379c3637f6.jpg',
                                 '/var/folders/zv/08pz_mfn0196h6r4k6n7rt65zc12vx/T/15c77c5b-8e9b-4405-914f-6f1f9fbc67cd.jpg',
                                 '/var/folders/zv/08pz_mfn0196h6r4k6n7rt65zc12vx/T/be02f909-d27b-43dc-a21d-990ad465d5c5.jpg' ]);
-const opfBuilder = new MCGOPFBuilder(mcgComic);
+
 opfBuilder.buildBook()
     .then(function() {
         console.log('done');
