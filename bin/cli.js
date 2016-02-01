@@ -2,7 +2,7 @@
 
 'use strict';
 const commandLineArgs = require('command-line-args');
-const logger = require('../src/logger.js');
+const logger = require('../lib/mcg_logger.js');
 
 const cli = commandLineArgs([
     {name: 'target', alias: 't', type: String}
