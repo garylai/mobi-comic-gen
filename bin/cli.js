@@ -48,7 +48,6 @@ co(function *(){
     console.log('generated comic located at:');
     console.log(pathToMobi);
 }).catch(function(err) {
-    console.log('here');
     console.log(err);
     console.log(err.stack);
 });
