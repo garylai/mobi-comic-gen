@@ -9,7 +9,8 @@ const co = require('co');
 const fs = require('fs');
 
 const cli = commandLineArgs([
-    {name: 'target', alias: 't', type: String, description: 'target comic\'s id' }
+    {name: 'target', alias: 't', type: String, description: 'target comic\'s id' },
+    {name: 'imageQuality', alias: 'q', type: Number, description: 'quality of the images: 1-100', defaultValue: 90 }
 ]);
 
 let options = {};
@@ -19,7 +20,7 @@ try {
     options = {};
 }
 
-if(!options.target) {
+if(!options.target || options.imageQuality < 1 || options.imageQuality > 100) {
     console.log(cli.getUsage());
     process.exit();
 }
@@ -32,7 +33,7 @@ co(function *(){
     try{
         mcgComic = yield dm5Downloader.getPageImagesAsync();
         const opfBuilder = new OPFBuilder(mcgComic.title, mcgComic.imagePaths);
-        pathToMobi = yield opfBuilder.buildBookAsync();
+        pathToMobi = yield opfBuilder.buildBookAsync(options.imageQuality);
     } finally {
         if(mcgComic !== null) {
             const promises = [];
